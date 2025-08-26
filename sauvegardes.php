@@ -1,4 +1,4 @@
-﻿<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php'; ?>
 
 <main class="devices-section">
   <h2 class="text-2xl mb-6">
