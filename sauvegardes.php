@@ -198,11 +198,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.querySelectorAll('tr.client-row').forEach(function(row){
-    row.addEventListener('click', function(){
+    row.addEventListener('click', function(e){
+      if (e.target.closest('a, button, form')) return;
       showBackupsModal(this.dataset.clientId, this.dataset.clientName);
     });
     row.addEventListener('keydown', function(e){
-      if (e.key === "Enter" || e.key === " ") {
+      if ((e.key === "Enter" || e.key === " ") && !e.target.closest('a, button, form')) {
         showBackupsModal(this.dataset.clientId, this.dataset.clientName);
       }
     });
